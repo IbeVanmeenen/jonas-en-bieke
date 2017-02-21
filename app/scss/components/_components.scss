@@ -7,20 +7,16 @@
 
 /* Blocks
    ========================================================================== */
-@import "blocks/buttons",
-        "blocks/img",
-        "blocks/hr",
-        "blocks/lists",
-        "blocks/links";
+// @import "blocks/...";
 
 
 
 /* Structures
    ========================================================================== */
-// @import "structures/...";
+@import "structures/waves";
 
 
 
 /* Main
    ========================================================================== */
-// @import "main/...";
+@import "main/main-header";

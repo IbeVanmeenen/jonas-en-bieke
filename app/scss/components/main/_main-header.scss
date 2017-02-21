@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Main Header
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.main-header {
+    width: 100vw;
+    height: 100vh;
+    padding: 20vh 0 0 0;
+
+    overflow: hidden;
+
+    background: #c0fcff url('../img/header/sky.png') top left;
+    background-size: cover;
+
+    &::after {
+        content: "";
+
+        display: block;
+        width: 100%;
+        height: 4vw;
+
+        background: #c0fcff;
+    }
+}
+
+
+
+/* Title
+   ========================================================================== */
+.main-header__title {
+    z-index: 4;
+    position: absolute;
+    top: 4vw;
+    left: 4vw;
+
+    color: $white;
+
+    display: block;
+    margin: 0;
+
+    @include fluid-type(25rem, 80rem, 3rem, 6rem);
+    text-shadow: 0 0 1em rgba(0, 0, 0, .1);
+}
+
+.main-header__title__sm {
+    display: block;
+    margin: 0 0 2vw;
+
+    font-family: $font-family--base;
+    font-weight: normal;
+    font-size: .4em;
+    color: $black;
+}
+
+
+
+
+/* Waves
+   ========================================================================== */
+.main-header__waves {
+
+}

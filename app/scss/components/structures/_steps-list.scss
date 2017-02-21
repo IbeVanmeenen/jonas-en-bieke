@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Steps list
+   ========================================================================== */
+
+/* General
+   ========================================================================== */
+.steps-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include fluid-type(25rem, 80rem, 1.4rem, 1.8rem);
+    line-height: 1.2;
+}
+
+
+
+/* Item
+   ========================================================================== */
+.steps-list__item {
+    display: flex;
+    align-items: center;
+
+    margin: 0 0 2rem 0;
+
+    overflow: hidden;
+}
+
+.steps-list__item__fig {
+    float: left;
+
+    display: block;
+    width: rem-calc(50);
+    margin: 0 2rem 0 0;
+
+    overflow: hidden;
+}
+
+.steps-list__item__txt {
+    display: block;
+    margin: 0;
+
+    overflow: hidden;
+}

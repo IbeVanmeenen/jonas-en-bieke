@@ -63,7 +63,8 @@
 
 
 
-
+/* Img
+   ========================================================================== */
 .expl-block__img {
     display: block;
     max-width: 60%;
@@ -71,4 +72,15 @@
 
     pointer-events: none;
     user-select: none;
+}
+
+
+
+/* Title
+   ========================================================================== */
+.expl-block__title {
+    margin: 5vw 0;
+    line-height: 1.3;
+
+    @include fluid-type(25rem, 80rem, 2rem, 3rem);
 }

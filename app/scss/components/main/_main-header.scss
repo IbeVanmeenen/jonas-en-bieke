@@ -12,8 +12,8 @@
 
     overflow: hidden;
 
-    background: #c0fcff url('../img/header/sky.png') top left no-repeat;
-    background-size: cover;
+    background: #c0fcff;
+    background: linear-gradient(to bottom, #c0fcff, #3ba1b6);
 
     @include media-breakpoint-up(md) {
         height: 100vh;

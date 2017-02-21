@@ -12,7 +12,7 @@
 
     overflow: hidden;
 
-    background: #c0fcff url('../img/header/sky.png') top left;
+    background: #c0fcff url('../img/header/sky.png') top left no-repeat;
     background-size: cover;
 
     @include media-breakpoint-up(md) {

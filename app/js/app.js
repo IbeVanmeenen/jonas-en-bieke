@@ -1,10 +1,10 @@
 /* ==========================================================================
-   Webstarter
+   Jonas & Bieke
    ========================================================================== */
 
-webstarter.app = () => {
+jb.app = () => {
 
-    let exports = webstarter.app;
+    let exports = jb.app;
 
 
     // Scroll
@@ -29,7 +29,7 @@ webstarter.app = () => {
             ticking = false;
             const currentScrollY = latestKnownScrollY;
 
-            // webstarter.component.updateScroll(currentScrollY);
+            // jb.component.updateScroll(currentScrollY);
         };
 
         // scroll mousewheel wheel
@@ -47,7 +47,7 @@ webstarter.app = () => {
 
     // Init
     const init = (() => {
-        webstarter.component();
+        jb.code();
     })();
 };
 
@@ -66,9 +66,9 @@ const ready = (fn) => {
 };
 
 ready(() => {
-    webstarter.app();
+    jb.app();
 });
 
 window.onload = () => {
-    webstarter.app.onload();
+    jb.app.onload();
 };

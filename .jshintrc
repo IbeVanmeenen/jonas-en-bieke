@@ -11,6 +11,8 @@
     "globals": {
         "webstarter": true,
         "console": true,
-        "Promise": true
+        "Promise": true,
+
+        "jb": true
     }
 }

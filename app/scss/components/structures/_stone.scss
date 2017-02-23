@@ -5,7 +5,19 @@
 /* General
    ========================================================================== */
 .stone {
+    position: relative;
 
+    display: block;
+    width: 100%;
+    height: rem-calc(400);
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    @include media-breakpoint-up(sm) {
+        height: rem-calc(650);
+    }
 }
 
 
@@ -13,11 +25,32 @@
 /* Bg
    ========================================================================== */
 .stone__bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
 
+    display: block;
+    width: rem-calc(600);
+    height: auto;
+    margin: 0 auto;
+
+    transform: translateX(-48%);
+
+    @include media-breakpoint-up(sm) {
+        width: rem-calc(1000);
+    }
+}
+
+.stone__head {
+    position: absolute;
+
+    display: none;
 }
 
 .stone__eye {
+    position: absolute;
 
+    display: none;
 }
 
 .stone__eye--correct {
@@ -41,9 +74,7 @@
 /* Code Input
    ========================================================================== */
 .stone__code {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+
 
     // width: auto;
     // max-width: rem-calc(500);
@@ -52,16 +83,19 @@
 }
 
 .stone__code__btn {
-    flex: 1 1 rem-calc(50);
-
-    display: block;
+    display: inline-block;
     width: rem-calc(50);
     height: rem-calc(50);
     margin: rem-calc(20);
 
-    background: transparent;
+    background: transparent url('../img/stone/btn.png') 50% 50% no-repeat;
+    background-size: rem-calc(50);
     border: 0;
 
     font-size: rem-calc(20);
     font-family: $font-family--headers;
+
+    &:active, &:focus {
+        outline: 0;
+    }
 }

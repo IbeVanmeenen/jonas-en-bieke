@@ -5,20 +5,53 @@
 /* General
    ========================================================================== */
 .stone {
+
+}
+
+
+
+/* Bg
+   ========================================================================== */
+.stone__bg {
+
+}
+
+.stone__eye {
+
+}
+
+.stone__eye--correct {
+
+}
+
+.stone__eye--wrong {
+
+}
+
+
+
+/* Code Input
+   ========================================================================== */
+.stone__input {
+
+}
+
+
+
+/* Code Input
+   ========================================================================== */
+.stone__code {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 
-    width: auto;
-    max-width: rem-calc(500);
-    margin: 0 auto;
-    padding: 2vw;
+    // width: auto;
+    // max-width: rem-calc(500);
+    // margin: 0 auto;
+    // padding: 2vw;
 }
 
-
-/* Btn
-   ========================================================================== */
-.stone__btn {
+.stone__code__btn {
     flex: 1 1 rem-calc(50);
 
     display: block;

@@ -6,8 +6,10 @@
         "resourcesPath": "app/"
     },
 
+    "html": "<=resourcesPath>index.html",
     "scss": "<=resourcesPath>scss/**/*.scss",
     "img": "<=resourcesPath>img/**/*.{png,jpg,jpeg,gif,svg,webp}",
+    "sound": "<=resourcesPath>sound/*.mp3",
 
     "js": {
         "vendors": [
@@ -24,7 +26,8 @@
     "dist": {
         "css": "<=distPath>css/",
         "js": "<=distPath>js/",
-        "img": "<=distPath>img/"
+        "img": "<=distPath>img/",
+        "sound": "<=distPath>sound/"
     },
 
     "browserSupport": [

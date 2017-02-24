@@ -38,7 +38,7 @@
    ========================================================================== */
 .expl-block__col {
     margin: 0;
-    padding: 4vw;
+    padding: 6vw 4vw;
 
     @include media-breakpoint-up(sm) {
         flex: 0 0 50%;
@@ -57,7 +57,7 @@
     padding: 4em 4em 2em;
 
     @include media-breakpoint-up(sm) {
-        padding: 4vw;
+        padding: 6vw 4vw;
     }
 }
 

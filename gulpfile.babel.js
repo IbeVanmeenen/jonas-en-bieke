@@ -277,6 +277,35 @@ gulp.task('images', () => {
 });
 
 
+// Audio
+gulp.task('sound', () => {
+    return gulp.src(config.sound)
+        // Set desitination
+        .pipe(gulp.dest(config.dist.sound))
+
+        // Show total size of images
+        .pipe(plugins.size({
+            title: 'sound'
+        }));
+});
+
+
+// HTML
+gulp.task('html', () => {
+    return gulp.src(config.html)
+        // Minify
+        .pipe(plugins.htmlmin({
+            collapseWhitespace: true
+        }))
+
+        // Set desitination
+        .pipe(gulp.dest(''))
+
+        // Livereload
+        .pipe(plugins.livereload());
+});
+
+
 // Clean
 gulp.task('clean', (done) => {
     return del(config.vars.distPath, {
@@ -306,6 +335,7 @@ gulp.task('watch', () => {
     gulp.watch(config.scss, ['styles']);
     gulp.watch(config.js.app, ['js-check', 'js-app']);
     gulp.watch(config.img, ['images']);
+    gulp.watch(config.html, ['html']);
 });
 
 
@@ -321,7 +351,7 @@ gulp.task('default', (done) => {
 
     runSequence(
         'clean',
-        ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images'],
+        ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images', 'sound', 'html'],
         ['serve', 'watch'],
     done);
 });
@@ -333,7 +363,7 @@ gulp.task('build', (done) => {
 
     runSequence(
         'clean',
-        ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images'],
+        ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images', 'sound', 'html'],
     done);
 });
 

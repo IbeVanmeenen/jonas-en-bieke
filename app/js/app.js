@@ -48,6 +48,7 @@ jb.app = () => {
     // Init
     const init = (() => {
         jb.code();
+        jb.sound();
     })();
 };
 

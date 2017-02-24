@@ -21,9 +21,13 @@ jb.code = () => {
         if (codes.indexOf(givenCode) > -1) {
             console.log('correct code');
             givenCode = '';
+
+            jb.sound.playSuccess();
         } else {
             console.log('wrong code');
             givenCode = '';
+
+            jb.sound.playFail();
         }
     };
 
@@ -40,7 +44,15 @@ jb.code = () => {
 
     // Set Item
     const setItem = (btn) => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('mousedown', (e) => {
+            jb.sound.playClick();
+        }, false);
+
+        btn.addEventListener('touchstart', (e) => {
+            jb.sound.playClick();
+        }, false);
+
+        btn.addEventListener('click', (e) => {
             givenCode += btn.dataset.code;
             checkCodeLenght();
         }, false);

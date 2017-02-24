@@ -43,8 +43,20 @@
 
 .stone__head {
     position: absolute;
+    top: rem-calc(20);
+    left: 50%;
 
-    display: none;
+    width: rem-calc(100);
+    height: auto;
+
+    transform: translate(-47%, 0);
+
+    @include media-breakpoint-up(sm) {
+        top: rem-calc(37);
+        left: 50%;
+
+        width: rem-calc(150);
+    }
 }
 
 .stone__eye {
@@ -63,18 +75,18 @@
 
 
 
-/* Code Input
-   ========================================================================== */
-.stone__input {
-
-}
-
-
-
-/* Code Input
+/* Code
    ========================================================================== */
 .stone__code {
+    position: absolute;
+    top: rem-calc(230);
+    left: 50%;
 
+    width: rem-calc(300);
+
+    text-align: center;
+
+    transform: translate(-50%, 0);
 
     // width: auto;
     // max-width: rem-calc(500);
@@ -86,11 +98,12 @@
     display: inline-block;
     width: rem-calc(50);
     height: rem-calc(50);
-    margin: rem-calc(20);
+    margin: rem-calc(10);
 
     background: transparent url('../img/stone/btn.png') 50% 50% no-repeat;
     background-size: rem-calc(50);
     border: 0;
+    border-radius: rem-calc(11);
 
     font-size: rem-calc(20);
     font-family: $font-family--headers;
@@ -98,4 +111,17 @@
     &:active, &:focus {
         outline: 0;
     }
+
+    &:active {
+        color: #bb862a;
+        box-shadow: inset 0 0 rem-calc(20) rgba(0, 0, 0, .5);
+    }
+}
+
+
+
+/* Result
+   ========================================================================== */
+.stone__result {
+    display: none;
 }

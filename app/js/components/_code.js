@@ -74,10 +74,6 @@ jb.code = () => {
             jb.sound.playClick();
         }, false);
 
-        btn.addEventListener('touchstart', (e) => {
-            jb.sound.playClick();
-        }, false);
-
         btn.addEventListener('click', (e) => {
             givenCode += btn.dataset.code;
             checkCodeLenght();

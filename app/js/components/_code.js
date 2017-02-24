@@ -87,8 +87,8 @@ jb.code = () => {
         stone = document.getElementById('stone');
         directions = document.getElementById('stone-directions');
 
-        for (let btn of btns) {
+        [].forEach.call(btns, (btn) => {
             setItem(btn);
-        }
+        });
     })();
 };

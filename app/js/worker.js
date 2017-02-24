@@ -6,10 +6,12 @@
     Worker - Config
    ========================================================================== */
 const config = {
-    'version': '1.0.0',
+    'version': '1.1.0',
     'required_assets': [
         './assets/css/style.min.css',
         'https://fonts.googleapis.com/css?family=Amatic+SC|Lobster+Two:700',
+        'https://fonts.gstatic.com/s/amaticsc/v9/DPPfSFKxRTXvae2bKDzp5JBw1xU1rKptJj_0jans920.woff2',
+        'https://fonts.gstatic.com/s/lobstertwo/v9/bmdxOflBqMqjEC0-kGsIiP79_ZuUxCigM2DespTnFaw.woff2',
 
         './assets/img/header/waves-1.png',
         './assets/img/header/waves-2.png',

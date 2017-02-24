@@ -209,26 +209,42 @@ gulp.task('js-vendors', () => {
 
 
 // JS - Other
-gulp.task('js-other', () => {
-    return gulp.src(config.js.other)
-        // Uglify
-        .pipe(plugins.uglify({
-            mangle: {
-                except: ['jQuery']
-            }
-        }))
+gulp.task('js-worker', () => {
+    return gulp.src(config.js.worker)
+        // Concat
+        .pipe(plugins.concat('worker.min.js'))
+
+        // Babel
+        .pipe(plugins.babel())
+
+        // Error catch
         .on('error', function(err) {
-            errorLogger('Javascript Error', err.message);
+            errorLogger('Error inside task "js"', err.message, true);
+            this.emit('end');
+        })
+
+        // Remove console logs (only on build)
+        .pipe(plugins.if(isBuild,
+            plugins.stripDebug()
+        ))
+
+        // Uglify (only on build)
+        .pipe(plugins.if(isBuild,
+            plugins.uglify({
+                mangle: {
+                    except: ['jQuery']
+                }
+            })
+        ))
+
+        // Error catch
+        .on('error', function(err) {
+            errorLogger('Error inside task "js"', err.message, true);
             this.emit('end');
         })
 
         // Set destination
-        .pipe(gulp.dest(config.dist.js))
-
-        // Show total size of js
-        .pipe(plugins.size({
-            title: 'js'
-        }));
+        .pipe(gulp.dest(''));
 });
 
 
@@ -286,6 +302,20 @@ gulp.task('sound', () => {
         // Show total size of images
         .pipe(plugins.size({
             title: 'sound'
+        }));
+});
+
+
+
+// Audio
+gulp.task('video', () => {
+    return gulp.src(config.video)
+        // Set desitination
+        .pipe(gulp.dest(config.dist.video))
+
+        // Show total size of images
+        .pipe(plugins.size({
+            title: 'video'
         }));
 });
 
@@ -351,7 +381,7 @@ gulp.task('default', (done) => {
 
     runSequence(
         'clean',
-        ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images', 'sound', 'html'],
+        ['styles', 'js-check', 'js-vendors', 'js-app', 'js-worker', 'images', 'sound', 'video', 'html'],
         ['serve', 'watch'],
     done);
 });
@@ -363,7 +393,7 @@ gulp.task('build', (done) => {
 
     runSequence(
         'clean',
-        ['styles', 'js-check', 'js-vendors', 'js-app', 'js-other', 'images', 'sound', 'html'],
+        ['styles', 'js-check', 'js-vendors', 'js-app', 'js-worker', 'images', 'sound', 'video', 'html'],
     done);
 });
 

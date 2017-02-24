@@ -10,6 +10,7 @@
     "scss": "<=resourcesPath>scss/**/*.scss",
     "img": "<=resourcesPath>img/**/*.{png,jpg,jpeg,gif,svg,webp}",
     "sound": "<=resourcesPath>sound/*.mp3",
+    "video": "<=resourcesPath>video/*.mp4",
 
     "js": {
         "vendors": [
@@ -20,14 +21,15 @@
             "<=resourcesPath>js/components/*.js",
             "<=resourcesPath>js/app.js"
         ],
-        "other": "<=resourcesPath>js/other/*.js"
+        "worker": "<=resourcesPath>js/worker.js"
     },
 
     "dist": {
         "css": "<=distPath>css/",
         "js": "<=distPath>js/",
         "img": "<=distPath>img/",
-        "sound": "<=distPath>sound/"
+        "sound": "<=distPath>sound/",
+        "video": "<=distPath>video/"
     },
 
     "browserSupport": [

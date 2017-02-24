@@ -49,6 +49,12 @@ jb.app = () => {
     const init = (() => {
         jb.code();
         jb.sound();
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('worker.min.js').then(() => {
+                console.log('Service Worker Registered');
+            });
+        }
     })();
 };
 

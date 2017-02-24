@@ -52,18 +52,20 @@
                     </li>
                     <li class="steps-list__item">
                         <img src="./assets/img/icons/map.png" class="steps-list__item__fig">
-                        <p class="steps-list__item__txt">Herhaal dit tot jullie alle stukjes (3) van de kaart hebben verzameld!</p>
+                        <p class="steps-list__item__txt">Herhaal dit tot jullie alle stukjes van de kaart hebben verzameld!</p>
                     </li>
                 </ol>
             </div>
         </section>
 
         <section class="code-block">
-            <figure class="stone">
+            <figure class="stone" id="stone">
                 <img src="./assets/img/stone/stone--no-head.jpg" class="stone__bg">
-                <img src="./assets/img/stone/head.png" class="stone__head">
-                <img src="./assets/img/stone/eyes--correct.png" class="stone__eye stone__eye--correct">
-                <img src="./assets/img/stone/eye--wrong.png" class="stone__eye stone__eye--wrong">
+                <figure class="stone__head">
+                    <img src="./assets/img/stone/head.png" class="stone__head__head">
+                    <img src="./assets/img/stone/eyes--correct.png" class="stone__eye stone__eye--correct">
+                    <img src="./assets/img/stone/eyes--wrong.png" class="stone__eye stone__eye--wrong">
+                </figure>
 
                 <figcaption class="stone__content">
                     <div class="stone__code">
@@ -82,8 +84,7 @@
                         <button type="button" class="js-code-btn stone__code__btn" data-code="8">8</button>
                         <button type="button" class="js-code-btn stone__code__btn" data-code="9">9</button>
                     </div>
-                    <div class="stone__result">
-                        All Koekoek
+                    <div class="stone__result" id="stone-directions">
                     </div>
                 </figcaption>
             </figure>

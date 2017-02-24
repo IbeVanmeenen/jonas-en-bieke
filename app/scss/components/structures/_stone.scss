@@ -9,14 +9,81 @@
 
     display: block;
     width: 100%;
-    height: rem-calc(400);
+    height: rem-calc(650);
     margin: 0;
     padding: 0;
 
     overflow: hidden;
+}
 
-    @include media-breakpoint-up(sm) {
-        height: rem-calc(650);
+.stone--failed {
+
+    .stone__eye--wrong {
+        animation: pulse 3s ease;
+    }
+
+    .stone__head {
+        animation: grow 3s ease;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.stone--success {
+
+    .stone__eye--correct {
+        opacity: 1;
+    }
+
+    .stone__head {
+        animation: drop 3s ease;
+    }
+
+    .stone__code {
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .stone__result {
+        z-index: 2;
+        opacity: 1;
+    }
+}
+
+@keyframes drop {
+    0% {
+        transform: translate3d(0, 0, 0);
+    },
+    10% {
+        transform: translate3d(0, 10%, 0);
+    },
+    100% {
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -30,43 +97,51 @@
     left: 50%;
 
     display: block;
-    width: rem-calc(600);
+    width: rem-calc(1000);
     height: auto;
     margin: 0 auto;
 
     transform: translateX(-48%);
 
-    @include media-breakpoint-up(sm) {
-        width: rem-calc(1000);
-    }
+    user-select: none;
+    pointer-events: none;
 }
 
 .stone__head {
     position: absolute;
-    top: rem-calc(20);
+    top: rem-calc(37);
     left: 50%;
 
-    width: rem-calc(100);
+    width: rem-calc(150);
     height: auto;
+    margin: 0 0 0 -70px;
+    padding: 0;
 
-    transform: translate(-47%, 0);
+    user-select: none;
+    pointer-events: none;
+}
 
-    @include media-breakpoint-up(sm) {
-        top: rem-calc(37);
-        left: 50%;
-
-        width: rem-calc(150);
-    }
+.stone__head__head {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .stone__eye {
     position: absolute;
+    top: rem-calc(42);
+    left: 50%;
 
-    display: none;
+    display: block;
+    width: rem-calc(125);
+
+    transform: translate(-47%, 0);
+
+    opacity: 0;
 }
 
 .stone__eye--correct {
-
+    transition: opacity;
 }
 
 .stone__eye--wrong {
@@ -87,11 +162,6 @@
     text-align: center;
 
     transform: translate(-50%, 0);
-
-    // width: auto;
-    // max-width: rem-calc(500);
-    // margin: 0 auto;
-    // padding: 2vw;
 }
 
 .stone__code__btn {
@@ -123,5 +193,23 @@
 /* Result
    ========================================================================== */
 .stone__result {
-    display: none;
+    z-index: -1;
+    position: absolute;
+    top: rem-calc(230);
+    left: 50%;
+
+    display: block;
+    width: rem-calc(300);
+    padding: 2vw;
+
+    font-size: rem-calc(40);
+    line-height: 1.2;
+    text-align: center;
+
+    transform: translate(-50%, 0);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 10s ease 3s;
 }

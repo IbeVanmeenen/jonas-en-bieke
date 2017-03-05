@@ -22,17 +22,15 @@ jb.code = () => {
         let message = '';
 
         if (givenCode === 'BD08IN88') {
-            // Ibe
-            message = 'Arrgh, daar waar het pad hoog is, daar waar de ezels balken.';
-        } else if (givenCode === 'JD98PC39') {
             // PJ
-            message = 'Arrgh, de klokken luiden, gevaar! Ship ahoi stadsratten!';
-        } else if (givenCode === 'LA09JJ39') {
+            message = 'Arrgh, de klokken luiden, gevaar! Schip ahoi stadsratten!';
+        } else if (givenCode === 'JD98PC39') {
             // Espe
             message = 'Arrgh, jonger en wijzer, daar zal het einde zijn.';
+        } else if (givenCode === 'LA09JJ39') {
+            // Ibe
+            message = 'Arrgh, daar waar het pad hoog is, daar waar de ezels balken.';
         }
-
-        console.log(message);
 
         directions.innerHTML = message;
     };
